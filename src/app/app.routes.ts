@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { NavbarComponent } from './home/navbar/navbar.component';
+import { CardVisualComponent } from './home/card-visual/card-visual.component';
 
 export const routes: Routes = [
-    {path: '', component: NavbarComponent}
+    {path: '', component: CardVisualComponent}
 ];

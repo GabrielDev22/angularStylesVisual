@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="container-md container-styles-card">
+        <div class="card" *ngFor="let item of data">
+            <div class="face card-front">
+                <img [src]="item.url" alt="...">
+                <p class="card-text">{{item.name}}</p>
+            </div>
+            <div class="face card-back d-flex justify-content-center align-items-center">
+                <div>
+                    <p class="card-text">{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
