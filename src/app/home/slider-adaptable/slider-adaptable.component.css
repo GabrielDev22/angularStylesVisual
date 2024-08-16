@@ -1,0 +1,26 @@
+.images-slides{
+    width: 100%;
+    object-fit: contain;
+    height: 500px;
+}
+
+.carousel-control-next{
+    bottom: 50%;
+    top: 45%;
+}
+
+.carousel-control-prev{
+    width: 4rem;
+    bottom: 50%;
+    top: 45%;
+}
+
+.carousel-control-prev-icon{
+    background-color: #000;
+    color: #000;
+}
+
+.carousel-control-next-icon{
+    background-color: #000;
+    color: #000;
+}

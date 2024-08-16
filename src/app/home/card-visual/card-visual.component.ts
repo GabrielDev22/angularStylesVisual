@@ -16,42 +16,6 @@ export class CardVisualComponent implements OnInit {
       name: "Slider",
       description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
       url: "assets/images/programacion.jpg",
-    },
-    {
-      id: "1",
-      name: "Slider",
-      description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
-      url: "assets/images/programacion.jpg",
-    },
-    {
-      id: "1",
-      name: "Slider",
-      description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
-      url: "assets/images/programacion.jpg",
-    },
-    {
-      id: "1",
-      name: "Slider",
-      description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
-      url: "assets/images/programacion.jpg",
-    },
-    {
-      id: "1",
-      name: "Slider",
-      description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
-      url: "assets/images/programacion.jpg",
-    },
-    {
-      id: "1",
-      name: "Slider",
-      description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
-      url: "assets/images/programacion.jpg",
-    },
-    {
-      id: "1",
-      name: "Slider",
-      description: "En esta seccion de aqui se trabaja en profundidad la creacion de un slider con boostrap al igual que hacerlo completamente responsivo a medida que las pantallas se ponen mas pequeñas",
-      url: "assets/images/programacion.jpg",
     }
   ];
 

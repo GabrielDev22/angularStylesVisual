@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,25 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  
+
+export class AppComponent implements OnInit {
+
   showDropDown : boolean = false;
 
+  constructor(
+    private router : Router
+  ){}
+
+  ngOnInit(): void {
+  }
+
+  categoriesNavigate(route: string){
+    switch(route){
+      case 'slider':
+        this.router.navigate(['/slider']);
+        break;
+    }
+  }
+  
+  
 }
