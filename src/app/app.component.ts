@@ -27,6 +27,9 @@ export class AppComponent implements OnInit {
       case 'slider':
         this.router.navigate(['/slider']);
         break;
+      case 'formulario-modal':
+        this.router.navigate(['formulario/modal']);
+        break;  
     }
   }
   

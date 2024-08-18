@@ -50,6 +50,7 @@
 }
 
 .dropdown-item{
+    cursor: pointer;
     color: #302b63 !important;
 }
 
