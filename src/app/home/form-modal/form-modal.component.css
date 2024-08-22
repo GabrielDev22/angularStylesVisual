@@ -1,0 +1,27 @@
+.closed-button{
+    margin-left: auto;
+    transition: all 0.5s ease;
+}
+
+.btn-outline-closed{
+    min-width: 90px;
+    background-color: rgb(242, 245, 248);
+    border: 1px solid #000;
+    transition: 0.3s ease;
+}
+
+.btn-outline-closed:hover{
+    box-shadow: 0px 1px 0px 1px #2b4363;
+}
+
+.btn-outline-send{
+    min-width: 100px;
+    background-color: #302B63;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: 0.3s ease;
+}
+
+.btn-outline-send:hover{
+    box-shadow: 0px 1px 0px 1px #2b4363;
+}
