@@ -12,6 +12,7 @@ import { ModalDismissReasons, NgbModal, NgbModule } from '@ng-bootstrap/ng-boots
 export class FormModalComponent implements OnInit {
 
   closeResult = '';
+  modalVerticalPantalla : boolean = false
 
   constructor(
     private modalService : NgbModal,
@@ -28,8 +29,12 @@ export class FormModalComponent implements OnInit {
 		this.modalService.open(content).result.then();
 	}
 
-  openModalVertical(modalVerticalPantalla : TemplateRef<any>){
-    this.modalService.open(modalVerticalPantalla);
+  openModalVertical(){
+    this.modalVerticalPantalla = true;
+  }
+
+  closeModalVertical(){
+    this.modalVerticalPantalla = false;
   }
 
   close(){

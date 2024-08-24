@@ -25,3 +25,26 @@
 .btn-outline-send:hover{
     box-shadow: 0px 1px 0px 1px #2b4363;
 }
+
+
+.container-modal-vertical{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-vertical{
+    width: 30rem;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    padding: 1rem;
+    margin-top: 4rem;
+    border-radius: 2px;
+    box-shadow: 0px 20px 50px rgba(0 0 0 / 50%);
+}
