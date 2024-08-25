@@ -37,6 +37,9 @@ export class AppComponent implements OnInit {
       case 'card-3D':
         this.router.navigate(['/card/3d']);
         break;    
+      case 'card-visual-3d':
+        this.router.navigate(['card/visual/3d']);
+        break;  
     }
   }
   
