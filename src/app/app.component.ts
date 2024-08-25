@@ -25,12 +25,18 @@ export class AppComponent implements OnInit {
 
   categoriesNavigate(route: string){
     switch(route){
+      case 'home':
+        this.router.navigate(['']);
+        break;
       case 'slider':
         this.router.navigate(['/slider']);
         break;
       case 'formulario-modal':
         this.router.navigate(['formulario/modal']);
-        break;  
+        break;
+      case 'card-3D':
+        this.router.navigate(['/card/3d']);
+        break;    
     }
   }
   
