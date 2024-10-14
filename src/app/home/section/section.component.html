@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="card-body">
+        <div class="row g-0">
+            <div class="col-12 p-5">
+                <h1 class="text-center fs-2 mt-4 title-pokemon">Busquedad de informacion Pokemon</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center aligns-items-center mb-5" *ngFor="let pokemon of pokemonList">
+                    <div class="card" style="width: 18rem;">
+                        <img [src]="pokemon.image" class="card-img-top card-image-pokemon" alt="...">
+                        <div class="card-body border-top border-2 border-danger-subtle">
+                            <h5 class="card-title">{{ pokemon.name }}</h5>
+                            <p class="card-text">Altura: {{ pokemon.height }}</p>
+                            <p class="card-text">Peso: {{pokemon.weight }}</p>
+                            <p class="card-text">Experiencia: {{pokemon.base_experience }}</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-container">
+                <button class="btn btn-secondary" (click)="reduceListPokemon(startPokemonList, newOffset)">Anterior</button>
+                <button class="btn btn-secondary" (click)="newListPokemon(startPokemonList, newOffset)">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
