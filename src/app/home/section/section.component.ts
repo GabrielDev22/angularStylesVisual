@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ExternalEndPointsAplicationService } from '../external-end-points-aplication.service';
 import { FormBuilder } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SectionDetailsPokemonComponent } from './section-details-pokemon/section-details-pokemon.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-section',
@@ -17,11 +19,13 @@ export class SectionComponent implements OnInit {
   startPokemonList : number = 12;
   offset : number = 0;
   newOffset : number = 12;
+  maxExperience = 500;
 
   constructor(
     private _externalEndPointApplication : ExternalEndPointsAplicationService,
     private change : ChangeDetectorRef,
-    private fb : FormBuilder
+    private route : Router,
+    private activatedRoute : ActivatedRoute
   ){}
 
   ngOnInit(){
@@ -35,7 +39,6 @@ export class SectionComponent implements OnInit {
       pokemon.height = res.height;
       pokemon.weight = res.weight;
       pokemon.base_experience = res.base_experience;
-      this.change.markForCheck();
     })
   }
 
@@ -48,14 +51,39 @@ export class SectionComponent implements OnInit {
     })
   }
 
+  getExperiencePercentage(pokemonBaseExperience : number): number{
+    return (pokemonBaseExperience / this.maxExperience) * 100;
+  }
+
   newListPokemon(newPokemonList : number, newOffset : number){
     this.newOffset += newOffset;
     this.getPokemonListResult(newPokemonList, this.newOffset);
+    this.scrollToTop();
   }
 
   reduceListPokemon(newPokemonList : number, newOffset : number){
     this.newOffset -= newOffset;
     this.getPokemonListResult(newPokemonList, this.newOffset);
+    this.scrollToTop();
+  }
+
+  scrollToTop(): void{
+    window.scrollTo({
+      top : 0,
+      behavior: 'smooth'
+    });
+  }
+
+  redirectDetailsPokemonById(){
+    this.pokemonList.forEach((element: any) => {
+      this.route.navigate(['section/details'],
+        {
+          queryParams: {
+            name: element.name,
+          }
+        }
+      );
+    });
   }
 
 }
