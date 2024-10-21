@@ -24,4 +24,8 @@ export class ExternalEndPointsAplicationService {
     return this.http.get(`${EXTERNAL_ENDPOINT_SERVICE}/pokemon/`, {params});
   }
 
+  getPokemonAbility(pokemonAbilityName : string): Observable<any>{
+    return this.http.get(`${EXTERNAL_ENDPOINT_SERVICE}/ability/${pokemonAbilityName}`);
+  }
+
 }

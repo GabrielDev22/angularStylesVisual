@@ -5,6 +5,7 @@ import { FormModalComponent } from './home/form-modal/form-modal.component';
 import { CardInfiniteTresDComponent } from './home/card-infinite-tres-d/card-infinite-tres-d.component';
 import { CardVisualTresDPersonajesComponent } from './home/card-visual-tres-d-personajes/card-visual-tres-d-personajes.component';
 import { SectionComponent } from './home/section/section.component';
+import { SectionDetailsPokemonComponent } from './home/section/section-details-pokemon/section-details-pokemon.component';
 
 export const routes: Routes = [
     {path: '', component: CardVisualComponent},
@@ -13,4 +14,5 @@ export const routes: Routes = [
     {path: 'card/3d', component: CardInfiniteTresDComponent},
     {path: 'card/visual/3d', component: CardVisualTresDPersonajesComponent},
     {path: 'section', component: SectionComponent},
+    {path: 'section/details', component: SectionDetailsPokemonComponent},
 ];

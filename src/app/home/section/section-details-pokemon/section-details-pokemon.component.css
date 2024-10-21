@@ -1,0 +1,43 @@
+.background-container{
+    background-color: #e7e7e7;
+    height: 625px;
+}
+
+.container-image-pokmeon{
+    border-radius: 40%;
+    background-color: #a023a0 ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container-statiscs-pokemon{
+}
+
+.progress{
+    border: 1px solid #c9c9c9;
+}
+
+.text-pookemon{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    margin-right: 10px;   
+}
+
+.btn-custom-ability{
+    max-width: 200px;
+    width: 150px;
+    padding: 2px;
+    border-radius: 2px;
+    background-color: #a023a0;
+    color: #fff;
+    margin-right: 4px;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-custom-ability:hover{
+    transform: translateY(-3px);
+    box-shadow: rgba(46, 75, 202, 0.35) 0px 5px 15px;
+}

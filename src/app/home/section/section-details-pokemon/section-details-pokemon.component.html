@@ -1,0 +1,42 @@
+<div class="container-fluid p-4 background-container">
+  <div class="d-flex justify-content-evenly align-items-center">
+    <div class="">
+      <div class="container-image-pokmeon">
+        <img [src]="this.pokemonImage" alt="">
+      </div>
+    </div>
+    <div class="w-50">
+      <div class="container-statiscs-pokemon">
+        <div class="p-2">
+          <h2>{{this.pokemonName}}</h2>
+        </div>
+        <div class="p-2">
+          <span class="text-pookemon">Altura:</span>
+          <span class="text-pookemon">{{this.pokemonHeight}}</span>
+        </div>
+        <div class="p-2">
+          <span class="text-pookemon">Peso:</span>
+          <span class="text-pookemon">{{this.pokemonWeight}}</span>
+        </div>
+        <div class="p-2">
+          <span class="text-pookemon">Tipo:</span>
+          <span class="text-pookemon">{{this.pokemonType}}</span>
+          <span class="text-pookemon">{{this.pokemonType2}}</span>
+        </div>
+        <div class="p-2">
+          <span class="text-pookemon">Habilidades:</span>
+          <button class="btn btn-custom-ability" (click)="getPokemonAbility(this.pokemonAbilitiesName1)">{{this.pokemonAbilitiesName1}}</button>
+          <button class="btn btn-custom-ability" (click)="getPokemonAbility(this.pokemonAbilitiesName2)">{{this.pokemonAbilitiesName2}}</button>
+        </div>
+        <div class="d-flex justify-content-between aligns-items-center p-2">
+          <span class="text-pookemon">Experiencia</span>
+          <div class="w-100 ms-2 mt-2">
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="1000">
+              <div class="progress-bar" [style.width]="getExperiencePercentage() + '%'"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

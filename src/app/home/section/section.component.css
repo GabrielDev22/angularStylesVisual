@@ -1,3 +1,8 @@
+.scrollToBar{
+  top: 0;
+  behavior: 'smooth';
+}
+
 .title-pokemon{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: transparent;
@@ -55,12 +60,29 @@
   padding: 4px;
 }
 
+.btn-primary{
+  width: 110px;
+  padding: 3px;
+  background-color: #2a3da8;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-primary:hover{
+    background-color: #4b0ba0;
+}
+
 .btn-secondary{
   width: 120px;
   background-color: #4b0ba0;
   border: 1px solid #fff;
   margin-left: 7px;
 }
+
+.progress-bar {
+  background-color: #2a3da8; 
+  transition: width 0.6s ease; 
+}
+
 
 @keyframes colorShift {
     0% {
