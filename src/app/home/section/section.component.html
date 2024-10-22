@@ -17,7 +17,7 @@
                                 <div class="progress-bar" [style.width]="getExperiencePercentage(pokemon.base_experience) + '%'"></div>
                             </div>
                             <div class="d-flex justify-content-center aligns-items-center">
-                                <a (click)="redirectDetailsPokemonById()" class="btn btn-primary">Ver más</a>
+                                <a (click)="redirectDetailsPokemonById(pokemon.name)" class="btn btn-primary">Ver más</a>
                             </div>
                         </div>
                     </div>

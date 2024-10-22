@@ -3,17 +3,42 @@
     height: 625px;
 }
 
-.container-image-pokmeon{
-    border-radius: 40%;
-    background-color: #a023a0 ;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.background-content-details{
+    background-color: #00000021;
+    border-radius: 20px;
 }
 
-.container-statiscs-pokemon{
+.container-image-pokmeon{
+    border-radius: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} 
+
+.water{
+    background-color: #166e97;
+}
+
+.fire{
+    background-color: #c41138;
+}
+
+.grass{
+    background: linear-gradient(135deg, hsla(120, 100%, 20%, 1) 0%, hsla(300, 100%, 25%, 1) 100%);
 }
 
 .progress{
     border: 1px solid #c9c9c9;
+}
+
+.progress-bar.fire{
+    background-color: #c41138;
+}
+
+.progress-bar.water{
+    background-color: #166e97 !important;
+}
+
+.progress-bar.grass{
+    background: linear-gradient(135deg, hsla(120, 100%, 20%, 1) 0%, hsla(300, 100%, 25%, 1) 100%);
 }
 
 .text-pookemon{
@@ -24,11 +49,10 @@
 }
 
 .btn-custom-ability{
-    max-width: 200px;
-    width: 150px;
+    max-width: 220px;
+    width: 180px;
     padding: 2px;
     border-radius: 2px;
-    background-color: #a023a0;
     color: #fff;
     margin-right: 4px;
     font-size: 14px;
