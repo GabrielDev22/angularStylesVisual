@@ -34,7 +34,6 @@ export class SectionComponent implements OnInit {
 
   getPokemonByName(pokemonName : string, pokemon: any){
     this._externalEndPointApplication.getPokemonByName(pokemonName).subscribe(res => {
-      console.log(res);
       pokemon.image = res.sprites.other.dream_world.front_default;
       pokemon.height = res.height;
       pokemon.weight = res.weight;
@@ -74,16 +73,14 @@ export class SectionComponent implements OnInit {
     });
   }
 
-  redirectDetailsPokemonById(){
-    this.pokemonList.forEach((element: any) => {
-      this.route.navigate(['section/details'],
+  redirectDetailsPokemonById(pokemonName : string){
+    this.route.navigate(['section/details'],
         {
           queryParams: {
-            name: element.name,
+            name: pokemonName,
           }
         }
       );
-    });
   }
 
 }
