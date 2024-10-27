@@ -2,11 +2,12 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExternalEndPointsAplicationService } from '../../external-end-points-aplication.service';
 import { CommonModule } from '@angular/common';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-section-details-pokemon',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgbTooltipModule],
   templateUrl: './section-details-pokemon.component.html',
   styleUrls: ['./section-details-pokemon.component.css']
 })
@@ -23,6 +24,7 @@ export class SectionDetailsPokemonComponent implements OnInit {
 
  pokemonAbilitiesName!: any;
  abilitiesContent : string[] = [];
+ abilitiesDescription : any;
  typePokemonProgressBar! : string;
  backgroundContainer! : string;
 
@@ -52,6 +54,7 @@ export class SectionDetailsPokemonComponent implements OnInit {
       this.pokemonType2 = res.types[1].type.name;
       this.pokemonAbilitiesName = res.abilities;
       this.getPokemonAbility(this.pokemonAbilitiesName);
+      this.getPokemonNature(res.id);
       this.change.markForCheck();
     })
   }
@@ -70,6 +73,18 @@ export class SectionDetailsPokemonComponent implements OnInit {
          this.typePokemonProgressBar = 'grass';
          this.backgroundContainer = 'grass';
          break; 
+      case 'electric':
+        this.typePokemonProgressBar = 'electric';   
+        this.backgroundContainer = 'electric';   
+        break;
+      case 'ground':
+        this.typePokemonProgressBar = 'ground';   
+        this.backgroundContainer = 'ground';   
+        break;
+      case 'poison':
+        this.typePokemonProgressBar = 'poison';   
+        this.backgroundContainer = 'poison';   
+        break;
       default:
           this.typePokemonProgressBar;
           this.backgroundContainer;
@@ -85,13 +100,19 @@ export class SectionDetailsPokemonComponent implements OnInit {
         const abilityName = res.names;
         const abilityFlavorTextEntries = res.flavor_text_entries;
         const spanishAbility = abilityName.find((ability: any) => ability.language && ability.language.name === 'es');
-        const spanishFlavorTextEntreties = abilityFlavorTextEntries.find((flavorText : any) => flavorText.language && flavorText.language.name === 'es');
-        console.log(spanishFlavorTextEntreties);   
+        this.abilitiesDescription = abilityFlavorTextEntries.find((flavorText : any) => flavorText.language && flavorText.language.name === 'es');
         if(spanishAbility){
              this.abilitiesContent.push(spanishAbility.name);
+             //console.log(this.abilitiesContent);
            } 
         });
     });
+  }
+
+  getPokemonNature(pokemonId : number){
+    this._externalEndPointApplication.getPokemonNature(pokemonId).subscribe(res => {
+      console.log(res);
+    })
   }
 
   getExperiencePercentage(): number{
