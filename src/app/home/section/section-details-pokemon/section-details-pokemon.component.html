@@ -26,7 +26,7 @@
         <div class="p-2">
           <span class="text-pookemon">Habilidades:</span>
           <ng-container *ngFor="let abilityName of abilitiesContent">
-            <button class="btn btn-custom-ability" [ngClass]="backgroundContainer">{{abilitiesContent}}</button>
+            <button class="btn btn-custom-ability" [ngClass]="backgroundContainer" [ngbTooltip]="this.abilitiesDescription.flavor_text">{{abilitiesContent}}</button>
           </ng-container>
         </div>
         <div class="d-flex justify-content-between aligns-items-center p-2">

@@ -28,4 +28,8 @@ export class ExternalEndPointsAplicationService {
     return this.http.get(`${EXTERNAL_ENDPOINT_SERVICE}/ability/${pokemonAbilityName}`);
   }
 
+  getPokemonNature(pokemonId : number): Observable<any>{  
+    return this.http.get(`${EXTERNAL_ENDPOINT_SERVICE}/nature/${pokemonId}`);
+  }
+
 }

@@ -25,6 +25,18 @@
     background: linear-gradient(135deg, hsla(120, 100%, 20%, 1) 0%, hsla(300, 100%, 25%, 1) 100%);
 }
 
+.electric{
+    background-color: #e0cd1d !important;
+}
+
+.ground{
+    background-color: #D2B48C; 
+}
+
+.poison{
+    background-color: #A040A0; 
+}
+
 .progress{
     border: 1px solid #c9c9c9;
 }
@@ -37,8 +49,20 @@
     background-color: #166e97 !important;
 }
 
+.progress-bar.electric{
+    background-color: #e0cd1d !important;
+}
+
 .progress-bar.grass{
     background: linear-gradient(135deg, hsla(120, 100%, 20%, 1) 0%, hsla(300, 100%, 25%, 1) 100%);
+}
+
+.progress-bar.ground{
+    background-color: #D2B48C; 
+}
+
+.progress-bar.poison{
+    background-color: #A040A0; 
 }
 
 .text-pookemon{
