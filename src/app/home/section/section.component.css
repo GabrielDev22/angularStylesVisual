@@ -48,10 +48,6 @@
   font-weight: 500;
 }
 
-.card-image-pokemon:hover{
-  transform: translateY(-5px);
-}
-
 .footer-container{
   display: flex;
   justify-content: center;
@@ -78,9 +74,85 @@
   margin-left: 7px;
 }
 
-.progress-bar {
-  background-color: #2a3da8; 
-  transition: width 0.6s ease; 
+.progress{
+  border: 1px solid #c9c9c9;
+}
+
+.progress-bar.fire{
+  background-color: #c41138;
+}
+
+.progress-bar.water{
+  background-color: #166e97 !important;
+}
+
+.progress-bar.electric{
+  background-color: #e0cd1d !important;
+}
+
+.progress-bar.grass{
+  background: linear-gradient(135deg, hsla(120, 100%, 20%, 1) 0%, hsla(300, 100%, 25%, 1) 100%);
+}
+
+.progress-bar.ground{
+  background-color: #D2B48C; 
+}
+
+.progress-bar.poison{
+  background-color: #A040A0; 
+}
+
+.progress-bar.bug{
+  background-color: #A8B820;
+}
+
+.progress-bar.fairy{
+  background-color: #EE99AC;
+}
+
+.btn-custom-ability{
+  max-width: 120px;
+  width: 100px;
+  padding: 2px;
+  border-radius: 2px;
+  color: #fff;
+  margin-right: 4px;
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.water{
+  background-color: #166e97;
+}
+
+.fire{
+  background-color: #c41138;
+}
+
+.grass{
+  background: linear-gradient(135deg, hsla(120, 100%, 20%, 1) 0%, hsla(300, 100%, 25%, 1) 100%);
+}
+
+.electric{
+  background-color: #e0cd1d !important;
+}
+
+.ground{
+  background-color: #D2B48C; 
+}
+
+.poison{
+  background-color: #A040A0; 
+}
+
+.bug{
+  background-color: #A8B820;
+}
+
+.fairy{
+  background-color: #EE99AC;
 }
 
 

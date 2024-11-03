@@ -20,6 +20,9 @@ export class SectionComponent implements OnInit {
   offset : number = 0;
   newOffset : number = 12;
   maxExperience = 500;
+  pokemonType! : string;
+  typePokemonProgressBar! : string;
+  backgroundContainer! : string;
 
   constructor(
     private _externalEndPointApplication : ExternalEndPointsAplicationService,
@@ -38,6 +41,9 @@ export class SectionComponent implements OnInit {
       pokemon.height = res.height;
       pokemon.weight = res.weight;
       pokemon.base_experience = res.base_experience;
+      pokemon.type = res.types[0].type.name;
+      pokemon.progressBarClass = this.getTypePokemonProgressBar(pokemon.type);
+      pokemon.btnClassType = this.getTypePokemonProgressBar(pokemon.type);
     })
   }
 
@@ -81,6 +87,29 @@ export class SectionComponent implements OnInit {
           }
         }
       );
+  }
+
+  getTypePokemonProgressBar(pokemonType : string) : string{
+    switch (pokemonType) {
+      case 'fire':
+          return 'fire';
+      case 'water':
+          return 'water';
+      case 'grass':
+          return 'grass';
+      case 'electric':
+          return 'electric';
+      case 'ground':
+          return 'ground';
+      case 'poison':
+          return 'poison';
+      case 'bug':
+          return 'bug';
+      case 'fairy':
+          return 'fairy';
+      default:
+          return 'default'; 
+    }
   }
 
 }

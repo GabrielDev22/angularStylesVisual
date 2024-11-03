@@ -1,5 +1,5 @@
 .background-container{
-    background-color: #e7e7e7;
+    background-color: #fdfdfd;
     height: 625px;
 }
 
@@ -37,6 +37,14 @@
     background-color: #A040A0; 
 }
 
+.bug{
+    background-color: #A8B820;
+  }
+  
+  .fairy{
+    background-color: #EE99AC;
+  }
+
 .progress{
     border: 1px solid #c9c9c9;
 }
@@ -65,6 +73,14 @@
     background-color: #A040A0; 
 }
 
+.progress-bar.bug{
+    background-color: #A8B820;
+}
+
+.progress-bar.fairy{
+    background-color: #EE99AC;
+}
+
 .text-pookemon{
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -88,4 +104,40 @@
 .btn-custom-ability:hover{
     transform: translateY(-3px);
     box-shadow: rgba(46, 75, 202, 0.35) 0px 5px 15px;
+}
+
+
+.content-version-pokemon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    
+}
+
+.circle-pokemon-version{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 170px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.generation-text-pokemon{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.pokemon-version-image{
+    min-width: 110;
+    min-height: 110px;
+    width: 120px;
+    object-fit: contain;
 }

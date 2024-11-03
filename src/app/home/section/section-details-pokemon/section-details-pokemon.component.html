@@ -40,4 +40,10 @@
       </div>
     </div>
   </div>
+  <div class="content-version-pokemon">
+    <div class="circle-pokemon-version" *ngFor="let generation of versionImages; let i = index">
+        <div class="generation-text-pokemon">Generation {{i + 1}}</div>
+        <img [src]="generation" [alt]="generation" class="pokemon-version-image" />
+    </div>
+  </div>
 </div>

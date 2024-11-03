@@ -28,6 +28,9 @@ export class SectionDetailsPokemonComponent implements OnInit {
  typePokemonProgressBar! : string;
  backgroundContainer! : string;
 
+ versions : any;
+ versionImages : string[] = [];
+
   constructor(
     private route : ActivatedRoute,
     private _externalEndPointApplication : ExternalEndPointsAplicationService,
@@ -43,7 +46,6 @@ export class SectionDetailsPokemonComponent implements OnInit {
 
   getPokemonByName(pokemonName : string){
     this._externalEndPointApplication.getPokemonByName(pokemonName).subscribe(res => {
-      console.log(res);
       this.pokemonName = res.name;
       this.pokemonImage = res.sprites.other.dream_world.front_default;
       this.pokemonExperience = res.base_experience;
@@ -55,6 +57,15 @@ export class SectionDetailsPokemonComponent implements OnInit {
       this.pokemonAbilitiesName = res.abilities;
       this.getPokemonAbility(this.pokemonAbilitiesName);
       this.getPokemonNature(res.id);
+
+      this.versions = res.sprites.versions;
+      for(const generation in this.versions){
+        const generationData = this.versions[generation];
+        const firstPropertyValue = Object.values(generationData)[0] as any;
+        this.versionImages.push(firstPropertyValue.front_default);
+      }
+      
+      console.log(res);
       this.change.markForCheck();
     })
   }
@@ -85,6 +96,14 @@ export class SectionDetailsPokemonComponent implements OnInit {
         this.typePokemonProgressBar = 'poison';   
         this.backgroundContainer = 'poison';   
         break;
+      case 'bug':
+        this.typePokemonProgressBar = 'bug';   
+        this.backgroundContainer = 'bug';   
+        break;
+      case 'fairy':
+        this.typePokemonProgressBar = 'fairy';   
+        this.backgroundContainer = 'fairy';   
+        break;
       default:
           this.typePokemonProgressBar;
           this.backgroundContainer;
@@ -103,7 +122,6 @@ export class SectionDetailsPokemonComponent implements OnInit {
         this.abilitiesDescription = abilityFlavorTextEntries.find((flavorText : any) => flavorText.language && flavorText.language.name === 'es');
         if(spanishAbility){
              this.abilitiesContent.push(spanishAbility.name);
-             //console.log(this.abilitiesContent);
            } 
         });
     });
