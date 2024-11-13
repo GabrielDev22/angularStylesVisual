@@ -32,4 +32,8 @@ export class ExternalEndPointsAplicationService {
     return this.http.get(`${EXTERNAL_ENDPOINT_SERVICE}/nature/${pokemonId}`);
   }
 
+  getMovesPokemonForName(movesPokemonName : string): Observable<any>{
+    return this.http.get(`${EXTERNAL_ENDPOINT_SERVICE}/move/${movesPokemonName}`);
+  }
+
 }

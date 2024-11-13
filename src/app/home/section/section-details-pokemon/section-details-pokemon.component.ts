@@ -2,7 +2,8 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExternalEndPointsAplicationService } from '../../external-end-points-aplication.service';
 import { CommonModule } from '@angular/common';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalMovesPokemonComponent } from '../modal-moves-pokemon/modal-moves-pokemon.component';
 
 @Component({
   selector: 'app-section-details-pokemon',
@@ -31,10 +32,14 @@ export class SectionDetailsPokemonComponent implements OnInit {
  versions : any;
  versionImages : string[] = [];
 
+ moviesPokemon : string[] = [];
+ moviePokemonByName : any;
+
   constructor(
     private route : ActivatedRoute,
     private _externalEndPointApplication : ExternalEndPointsAplicationService,
-    private change : ChangeDetectorRef
+    private change : ChangeDetectorRef,
+    private modalService : NgbModal
   ) { }
 
   ngOnInit() {
@@ -57,6 +62,7 @@ export class SectionDetailsPokemonComponent implements OnInit {
       this.pokemonAbilitiesName = res.abilities;
       this.getPokemonAbility(this.pokemonAbilitiesName);
       this.getPokemonNature(res.id);
+      const moviePokemonsName = res.moves;
 
       this.versions = res.sprites.versions;
       for(const generation in this.versions){
@@ -64,7 +70,8 @@ export class SectionDetailsPokemonComponent implements OnInit {
         const firstPropertyValue = Object.values(generationData)[0] as any;
         this.versionImages.push(firstPropertyValue.front_default);
       }
-      
+
+      this.moviesPokemon = moviePokemonsName.map((movesDetails : any) => movesDetails.move.name);
       console.log(res);
       this.change.markForCheck();
     })
@@ -135,6 +142,20 @@ export class SectionDetailsPokemonComponent implements OnInit {
 
   getExperiencePercentage(): number{
     return (this.pokemonExperience / this.maxExperience) * 100;
+  }
+
+  getMovesPokemonForName(movesPokemonName : string){
+    this._externalEndPointApplication.getMovesPokemonForName(movesPokemonName).subscribe(res => {
+      if(res != null){
+        const modalRef = this.modalService.open(ModalMovesPokemonComponent,
+          {
+            size: 'lg',
+            centered: true,
+            windowClass: 'global-modal-position'
+          });
+          modalRef.componentInstance.data = res;
+      }
+    })
   }
 
 }

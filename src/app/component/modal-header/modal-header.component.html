@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <div class="d-flex w-100 align-items-center">
+        <div class="modal-header-title">{{title}}
+            <ng-container *ngIf="popoverInfo?.length"><i class="fas fa-info-circle ms-1"
+                placement="bottom" container="body" triggers="mouseenter:mouseleave"></i>
+            </ng-container>
+        </div>
+        <div class="close-button" style="cursor: pointer;">
+            <i class="bi bi-x-lg" (click)="closeAction()"></i>
+        </div>
+    </div>
+</div>
+<div class="horizontal-divider"></div>
