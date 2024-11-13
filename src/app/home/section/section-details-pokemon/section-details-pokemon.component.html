@@ -46,4 +46,12 @@
         <img [src]="generation" [alt]="generation" class="pokemon-version-image" />
     </div>
   </div>
+  <div class="content-list-moves" *ngIf="moviesPokemon != null">
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="text-pookemon">Listado de movimientos</span>
+      </div>
+      <ng-container *ngFor="let move of moviesPokemon">
+        <button class="btn btn-custom-ability mx-2" [ngClass]="backgroundContainer" (click)="getMovesPokemonForName(move)">{{ move }}</button>
+      </ng-container>
+  </div>
 </div>

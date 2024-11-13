@@ -1,0 +1,16 @@
+.modal-header{
+    min-height: 3em !important;
+    border-bottom: 0px !important;
+}
+
+.modal-header-title{
+    color: #040227;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px !important;
+    flex: 1;
+}
+
+.close-icon{
+    cursor: pointer;
+}
